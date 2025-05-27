@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chandana's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #e5e5e6;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .great-vibes-regular {
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .header {
+      background-color: darkblue;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 0px 0px 5px 5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      font-weight: bold;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 12px;
+      display: block;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 40px;
+      background-color: #eef3ff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .hero-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .hero-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+    }
+
+    .education, .skills-section, .projects-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 40px;
+      background-color: #eef3ff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .education h2, .skills-section h2, .projects-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+      text-align: center;
+    }
+
+    .edu-item {
+      margin-bottom: 25px;
+    }
+
+    .edu-item h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #2c3e50;
+    }
+
+    .edu-item p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .edu-item span {
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background-color: #eef3ff;
+      border: 2px solid gray;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.05);
+      border-color: #6366f1;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .project-card p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .project-card a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Achievements Section */
+    .achievements-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 40px;
+      background: linear-gradient(to right, #f0f2ff, #e8f5ff);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .achievements-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #0a2540;
+    }
+
+    .achievement-item {
+      background-color: #ffffff;
+      border-left: 5px solid #007bff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .achievement-item h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #1a1a1a;
+    }
+
+    .achievement-item p {
+      margin: 10px 0;
+      color: #444;
+    }
+
+    .achievement-item a {
+      color: #007bff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* Headings font size */
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="color: white; font-size: 35px; font-weight: bold; font-family: 'Great Vibes', cursive; padding-left: 20px;">
+        &lt;portfolio/&gt;
+      </div>
+      <ul>
+        <li><a href="#About">About Me</a></li>
+        <li><a href="#Education">Education</a></li>
+        <li><a href="#Skills">Skills</a></li>
+        <li><a href="#Projects">My Projects</a></li>
+        <li><a href="#Achievements">Achievements</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Me -->
+  <section id="About" class="hero">
+    <div class="hero-text">
+      <h1>Hi all, I'm N.Saichandana 👋</h1>
+      <p>
+        Currently diving into the world of development as a first-year student.
+        I'm exploring the endless possibilities of tech — from building simple web pages
+        to dreaming up future innovations.
+      </p>
+    </div>
+    <div class="hero-img">
+      <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+      <dotlottie-player src="https://lottie.host/09d83985-2a09-4836-b8a9-e505edabcd7b/2oXeBNwb5L.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="Education" class="education">
+    <h2>🎓 Education</h2>
+    <div class="edu-item">
+      <h3>Bachelor of Technology - Computer Science</h3>
+      <p><span>Sathyabama Institute of Science and Technology</span> | 2024 - Present</p>
+      <p>Currently pursuing my B.Tech in Computer Science, diving deep into programming, web development, and software engineering.</p>
+    </div>
+    <div class="edu-item">
+      <h3>High School</h3>
+      <p><span>Narayana Junior College</span> | 2022 - 2024</p>
+      <p>Studied MPC (Maths, Physics, Chemistry) with a strong focus on problem-solving and logical thinking.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="Skills" class="skills-section">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">C</div>
+      <div class="skill-card">Git & GitHub</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="Projects" class="projects-section">
+    <h2>🚀 Open Source Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Portfolio Template</h3>
+        <p>A clean, mobile-first portfolio template built using HTML, CSS.</p>
+        <p><strong>Tech Stack:</strong> HTML, CSS</p>
+        <a href="https://github.com/yourusername/portfolio-template" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+      <div class="project-card">
+        <h3>Restaurant Website</h3>
+        <p>A responsive website for a restaurant with a homepage, menu section, and contact form.</p>
+        <p><strong>Tech Stack:</strong> HTML, CSS</p>
+        <a href="https://github.com/yourusername/restaurant-website" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="Achievements" class="achievements-section">
+    <h2>🏆 Achievements</h2>
+
+    <div class="achievement-item">
+      <h3>NPTEL Certification</h3>
+      <p>Earned <strong>Elite + Silver</strong> certification for successfully completing the NPTEL course.</p>
+      <a href="NPTEL-CERTIFICATION.jpg" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+    </div>
+
+    <div class="achievement-item">
+      <h3>Let's Upgrade</h3>
+      <p>Currently serving as a <strong>Student Ambassador</strong> for Let's Upgrade, contributing to tech community growth.</p>
+    </div>
+
+    <div class="achievement-item">
+      <h3>Python for Data Science</h3>
+      <p>Completed the course on <strong>Python for Data Science</strong> offered by <strong>RF Skilling Academy</strong> on <em>06 April 2025</em>.</p>
+      <a href="Certificate_RF Skilling_Academy.pdf" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+    </div>
+
+    <div class="achievement-item">
+      <h3>Git Bootcamp</h3>
+      <p>Completed a Bootcamp on <strong>Git Bootcamp</strong> offered by <strong>Let's Upgrade</strong> from <em>17 March to 19 March 2025</em>.</p>
+      <a href="Git bootcamp certification.pdf" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+    </div>
+
+    <div class="achievement-item">
+      <h3>Certification for Student Coordination</h3>
+      <p>Earned a certification for serving as a <strong>student coordinator</strong> in <strong>TECHNO SUMMIT 2K24</strong>.</p>
+      <a href="TECHNO SUMMIT 2K24.pdf" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+    </div>
+
+    <div class="achievement-item">
+      <h3>Memory Master</h3>
+      <p>Earned a certification for receiving 2nd place in <strong>Memory Master</strong> in <strong>BRILLIANZZA'24</strong>.</p>
+      <a href="Memory Master.jpeg" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+    </div>
+    <div class="achievement-item">
+      <h3>Calculas Carnival</h3>
+      <p>Earned a certification for receiving <strong>1st</strong> place in <strong>Calculas Carnival</strong> in <strong>BRILLIANZZA'24</strong>.</p>
+      <a href="Calculas Carnival.jpeg" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+    </div>
+
+  </section>
+</body>
+</html>
